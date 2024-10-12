@@ -5,7 +5,7 @@ import { CommonEntity } from "src/domain/common/common.entity";
 @Index(["currency"])
 @Index(["baseDate"])
 @Index(["currency", "baseDate"])
-export declare class Currency extends CommonEntity {
+export class Currency extends CommonEntity {
   @Column({
     type: "timestamp without time zone",
     default: () => "CURRENT_TIMESTAMP",

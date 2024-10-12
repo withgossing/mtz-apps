@@ -4,7 +4,7 @@ import { Bank } from "src/domain/bank/entities/bank.entity";
 
 @Entity({ name: "branch" })
 @Index(["branchCode"])
-export declare class Branch extends CommonEntity {
+export class Branch extends CommonEntity {
   @Column({ unique: true, comment: "지점코드" })
   branchCode: string;
 

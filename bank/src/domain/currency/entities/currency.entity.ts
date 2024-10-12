@@ -3,7 +3,7 @@ import { CommonEntity } from "src/domain/common/common.entity";
 
 @Entity({ name: "currency" })
 @Index(["currencyCode"])
-export declare class Currency extends CommonEntity {
+export class Currency extends CommonEntity {
   @Column({ unique: true, comment: "통화코드" })
   currencyCode: string;
 

@@ -6,7 +6,7 @@ import { Account } from "src/domain/account/entities/account.entity";
 @Index(["account"])
 @Index(["transactionDate"])
 @Index(["account", "transactionDate"])
-export declare class Transaction extends CommonEntity {
+export class Transaction extends CommonEntity {
   @Column({
     type: "timestamp without time zone",
     default: () => "CURRENT_TIMESTAMP",

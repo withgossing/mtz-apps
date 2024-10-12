@@ -1,9 +1,9 @@
-import { Column, Entity, Index, ManyToOne } from "typeorm";
+import { Column, Entity, Index } from "typeorm";
 import { CommonEntity } from "src/domain/common/common.entity";
 
 @Entity({ name: "user" })
 @Index(["userId"])
-export declare class User extends CommonEntity {
+export class User extends CommonEntity {
   @Column({ unique: true, comment: "사용자ID" })
   userId: string;
 
