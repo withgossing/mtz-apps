@@ -6,14 +6,21 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-const expressEjsLayouts = require("express-ejs-layouts");
 
 var app = express();
+
+// database connection
+const { AppDataSource } = require("./config/data-source");
+
+AppDataSource.initialize()
+  .then(async (connection) => {
+    console.log("Database connected successfully");
+  })
+  .catch((error) => console.log(error));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(expressEjsLayouts);
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -24,14 +31,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-// bootstrap setup
+// bootstrap
 app.use(
-  "/js",
-  express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js"))
-);
-app.use(
-  "/css",
-  express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css"))
+  "/bootstrap",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist"))
 );
 
 // catch 404 and forward to error handler

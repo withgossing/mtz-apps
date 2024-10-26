@@ -1,1 +1,69 @@
-<div>HEADER conponent</div>
+<div>
+  <div><h1><%= title %></h1></div>
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <p><span id="userRank">로딩 중...</span>등</p>
+        <p>전체 <span id="userRankTotal">로딩 중...</span>명</p>
+      </div>
+      <div class="col">
+        <p><span id="userGrade">로딩 중...</span>등급</p>
+        <p>상위 <span id="userGradePercentage">로딩 중...</span>%</p>
+      </div>
+      <div class="col">
+        <p><span id="userPointRecevie">로딩 중...</span> 포인트</p>
+        <p><span id="userPointAvailable">로딩 중...</span> 포인트 사용 가능</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const userRank = 10;
+  const userRankTotal = 30;
+  const userGrade = "B";
+  const userGradePercentage = 30;
+  const userPointRecevie = 1000;
+  const userPointAvailable = 3000;
+
+  // 사용자 등급 정보를 가져오는 함수
+  async function fetchUserRank() {
+    try {
+      // const response = await fetch(
+      //   "http://localhost:8090/api/collections/point_balances/records?filter=(point_code='meritz',user_id='sohee.kim')"
+      // );
+      // if (!response.ok) {
+      //   throw new Error("API 호출 실패");
+      // }
+      // const data = await response.json();
+
+      console.log(data);
+      console.log(data.items[0].current_balace);
+
+      // DOM 업데이트
+      document.getElementById("userRank").textContent = userRank;
+      document.getElementById("userRankTotal").textContent = userRankTotal;
+      document.getElementById("userGrade").textContent = userGrade;
+      document.getElementById("userGradePercentage").textContent =
+        userGradePercentage;
+      document.getElementById("userPointRecevie").textContent =
+        userPointRecevie;
+      document.getElementById("userPointAvailable").textContent =
+        userPointAvailable;
+    } catch (error) {
+      //   console.error("에러:", error);
+      //   document.getElementById("userRank").textContent =
+      //     "정보를 불러올 수 없습니다";
+    }
+  }
+
+  // 새로고침 버튼 클릭 시 실행
+  function refreshRank() {
+    document.getElementById("userRank").textContent = "로딩 중...";
+    fetchUserRank();
+  }
+
+  window.onload = function () {
+    fetchUserRank();
+  };
+</script>
