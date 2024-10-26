@@ -9,14 +9,15 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-// database connection
-const { AppDataSource } = require("./config/data-source");
+// bootstrap
+app.use(
+  "/bootstrap",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist"))
+);
 
-AppDataSource.initialize()
-  .then(async (connection) => {
-    console.log("Database connected successfully");
-  })
-  .catch((error) => console.log(error));
+// express-ejs-layouts
+const expressEjsLayouts = require("express-ejs-layouts");
+app.use(expressEjsLayouts);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -30,12 +31,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-
-// bootstrap
-app.use(
-  "/bootstrap",
-  express.static(path.join(__dirname, "node_modules/bootstrap/dist"))
-);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -52,5 +47,14 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// database connection
+const { AppDataSource } = require("./config/data-source");
+
+AppDataSource.initialize()
+  .then(async (connection) => {
+    console.log("Database connected successfully");
+  })
+  .catch((error) => console.log(error));
 
 module.exports = app;

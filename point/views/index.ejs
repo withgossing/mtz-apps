@@ -2,10 +2,108 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            2024
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">2024</a></li>
+            <li><a class="dropdown-item" href="#">2023</a></li>
+            <li><a class="dropdown-item" href="#">2022</a></li>
+            <li><a class="dropdown-item" href="#">2021</a></li>
+            <li><a class="dropdown-item" href="#">2020</a></li>
+          </ul>
+        </div>
+        <div class="col dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            전체
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">1분기</a></li>
+            <li><a class="dropdown-item" href="#">2분기</a></li>
+            <li><a class="dropdown-item" href="#">3분기</a></li>
+            <li><a class="dropdown-item" href="#">4분기</a></li>
+          </ul>
+        </div>
+        <div class="col dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            전체
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">보내기</a></li>
+            <li><a class="dropdown-item" href="#">받기</a></li>
+          </ul>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">일자</th>
+            <th scope="col">구분</th>
+            <th scope="col">상대방</th>
+            <th scope="col">포인트</th>
+            <th scope="col">사유</th>
+            <th scope="col">회수</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">1</th>
+            <td>2025-01-02</td>
+            <td>보내기</td>
+            <td>김메리</td>
+            <td>50</td>
+            <td>일을 열심히 하고 있습니다.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2025-03-12</td>
+            <td>받기</td>
+            <td>김팀장</td>
+            <td>30</td>
+            <td>불필요한 작업을 없앴습니다.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>2025-05-33</td>
+            <td>받기</td>
+            <td>이사원</td>
+            <td>50</td>
+            <td>어려운 문제 해결에 도움을 주었습니다.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
