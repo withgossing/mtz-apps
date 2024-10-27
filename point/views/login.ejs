@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+  </head>
+  <body>
+    LogIn > > >
+  </body>
+</html>
+
+<script>
+  window.onload = function () {
+    testLogin();
+  };
+
+  async function testLogin() {
+    const userId = "<%= userId %>";
+    const redirectUrl = "<%= redirectUrl %>";
+
+    try {
+      const response = await fetch("/user/userId/" + userId);
+
+      if (!response.ok) {
+        throw new Error("API call error");
+      }
+      const data = await response.json();
+
+      window.localStorage.setItem("id", data.id);
+      window.localStorage.setItem("user_id", data.user_id);
+      window.localStorage.setItem("user_name", data.user_name);
+      window.localStorage.setItem("department_code", data.department_code);
+      window.localStorage.setItem("department_name", data.department_name);
+      window.localStorage.setItem("position_code", data.position_code);
+      window.localStorage.setItem("position_name", data.position_name);
+
+      window.location.href = redirectUrl;
+    } catch (error) {
+      console.error("에러:", error);
+    }
+  }
+</script>

@@ -1,18 +1,33 @@
 <div>
-  <div><h1><%= title %></h1></div>
+  <div class="fs-6 text-end">
+    <span id="departmentName">...</span>
+    <span id="positionName">...</span>
+    <span id="userName">...</span>님 반갑습니다.
+  </div>
+  <div class="fs-1 fw-bold"><%= title %></div>
   <div class="container text-center">
     <div class="row align-items-start">
-      <div class="col">
-        <p><span id="userRank">로딩 중...</span>등</p>
-        <p>전체 <span id="userRankTotal">로딩 중...</span>명</p>
+      <div class="col-sm-4 text-center">
+        <div class="fs-1 fw-bold"><span id="userRank">...</span></div>
+        <div class="fs-6 fw-lighter">
+          전체 <span id="userRankTotal">...</span>명
+        </div>
       </div>
-      <div class="col">
-        <p><span id="userGrade">로딩 중...</span>등급</p>
-        <p>상위 <span id="userGradePercentage">로딩 중...</span>%</p>
+      <div class="col-sm-4 text-center">
+        <div class="fs-1 fw-bold">
+          <span id="userGrade">...</span>
+        </div>
+        <div class="fs-6 fw-lighter">
+          상위 <span id="userGradePercentage">...</span>%
+        </div>
       </div>
-      <div class="col">
-        <p><span id="userPointRecevie">로딩 중...</span> 포인트</p>
-        <p><span id="userPointAvailable">로딩 중...</span> 포인트 사용 가능</p>
+      <div class="col-sm-4 text-center">
+        <div class="fs-1 fw-bold">
+          <span id="userPointRecevie">...</span>
+        </div>
+        <div class="fs-6 fw-lighter">
+          <span id="userPointAvailable">...</span> 포인트 사용 가능
+        </div>
       </div>
     </div>
   </div>
@@ -29,31 +44,42 @@
   // 사용자 등급 정보를 가져오는 함수
   async function fetchUserRank() {
     try {
-      // const response = await fetch(
-      //   "http://localhost:8090/api/collections/point_balances/records?filter=(point_code='meritz',user_id='sohee.kim')"
-      // );
-      // if (!response.ok) {
+      const userId = window.localStorage.getItem("user_id");
+      const userName = window.localStorage.getItem("user_name");
+      const departmentCode = window.localStorage.getItem("department_code");
+      const departmentName = window.localStorage.getItem("department_name");
+      const positionCode = window.localStorage.getItem("position_code");
+      const positionName = window.localStorage.getItem("position_name");
+
+      // 사용자 현재 포인트 조회
+      // const responsePoint = await fetch("/point/userId/" + userId);
+      // if (!responsePoint.ok) {
       //   throw new Error("API 호출 실패");
       // }
-      // const data = await response.json();
+      // const dataPoint = await responsePoint.json();
 
-      // console.log(data);
-      // console.log(data.items[0].current_balace);
+      // 부서 전채인원 조회
+      const responseRank = await fetch("/user/rank/" + userId);
+      if (!responseRank.ok) {
+        throw new Error("API 호출 실패");
+      }
+      const dataRank = await responseRank.json();
 
       // DOM 업데이트
-      document.getElementById("userRank").textContent = userRank;
-      document.getElementById("userRankTotal").textContent = userRankTotal;
-      document.getElementById("userGrade").textContent = userGrade;
+      document.getElementById("userName").textContent = userName;
+      document.getElementById("departmentName").textContent = departmentName;
+      document.getElementById("positionName").textContent = positionName;
+      document.getElementById("userRank").textContent = dataRank.userRank;
+      document.getElementById("userRankTotal").textContent = dataRank.userCount;
+      document.getElementById("userGrade").textContent = dataRank.userGrade;
       document.getElementById("userGradePercentage").textContent =
-        userGradePercentage;
+        dataRank.userPercent;
       document.getElementById("userPointRecevie").textContent =
-        userPointRecevie;
+        dataRank.scorePoint;
       document.getElementById("userPointAvailable").textContent =
-        userPointAvailable;
+        dataRank.currentPoint;
     } catch (error) {
-      //   console.error("에러:", error);
-      //   document.getElementById("userRank").textContent =
-      //     "정보를 불러올 수 없습니다";
+      console.error("에러:", error);
     }
   }
 
