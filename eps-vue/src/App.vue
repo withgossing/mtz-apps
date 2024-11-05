@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import SideNav from './components/SideNav.vue';
+
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <SideNav />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
