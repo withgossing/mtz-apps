@@ -1,11 +1,19 @@
 import { Repository, DataSource, Between, In } from "typeorm";
 import { AppDataSource } from "../configs/typeorm.config";
-import { PointBalance } from "../entities/point-balance.entity";
+import { PointBalance } from "../entities/point-balances.entity";
 import { PointTransaction } from "../entities/point-transaction.entity";
 import { User } from "../entities/user.entity";
 import { PointType, PointReasonCode } from "../types/meta.type";
 import { AppError } from "../types/error.types";
 import { Department } from "../entities/department.entity";
+import { logger } from "../utils/logger";
+
+interface CreatePointBalanceDto {
+  userId: string;
+  pointType?: PointType;
+  balance?: number;
+  lastUpdatedAt?: Date;
+}
 
 interface GivePointsDto {
   senderUserId: string;
@@ -41,7 +49,7 @@ interface TransactionWithUserInfo {
   };
 }
 
-export class PointService {
+export class PointBalanceService {
   private pointBalanceRepository: Repository<PointBalance>;
   private pointTransactionRepository: Repository<PointTransaction>;
   private userRepository: Repository<User>;
@@ -56,6 +64,73 @@ export class PointService {
     this.departmentRepository = AppDataSource.getRepository(Department);
     this.dataSource = AppDataSource;
   }
+
+  // pointBalace 생성
+  async create(data: CreatePointBalanceDto): Promise<PointBalance> {
+    try {
+      // userId 입력 체크
+      if (!data.userId) {
+        throw new AppError("userId is required", 400);
+      } else {
+        const user = await this.userRepository.findOne({
+          where: { userId: data.userId },
+        });
+
+        if (!user) {
+          throw new AppError("User not found", 404);
+        }
+      }
+
+      // Data 입력
+      const pointBalance = this.pointBalanceRepository.create({
+        ...data,
+        pointType: data.pointType || PointType.RECEIVED,
+        balance: data.balance ?? 0,
+        lastUpdatedAt: data.lastUpdatedAt || new Date(),
+      });
+      return await this.pointBalanceRepository.save(pointBalance);
+    } catch (error) {
+      logger.error("Error creating pointBalasce:", error);
+      throw new AppError("Failed to create pointBalance", 500);
+    }
+  }
+
+  // point-balance 목록 조회
+  async findAll(): Promise<PointBalance[]> {
+    return await this.pointBalanceRepository.find();
+  }
+
+  // point-balance 단건 조회 (id)
+  async findById(id: string): Promise<PointBalance> {
+    const pointBalance = await this.pointBalanceRepository.findOne({
+      where: { id },
+    });
+
+    if (!pointBalance) {
+      throw new AppError("PointBalance not found", 404);
+    }
+    return pointBalance;
+  }
+
+  // point-balance 단건 조회 (userId)
+  async findByUserId(userId: string): Promise<PointBalance> {
+    const pointBalance = await this.pointBalanceRepository.findOne({
+      where: { userId },
+    });
+
+    if (!pointBalance) {
+      throw new AppError("PointBalance not found", 404);
+    }
+    return pointBalance;
+  }
+
+  /*
+   * ====================
+   *
+   *
+   *
+   * ====================
+   */
 
   private async getUserWithDepartment(userId: string): Promise<{
     userName: string;

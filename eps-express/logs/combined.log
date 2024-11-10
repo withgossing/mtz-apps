@@ -601,3 +601,242 @@
 2024-11-10 17:07:35 [INFO] - Database initialized
 2024-11-10 17:07:35 [INFO] - Server is running on http://localhost:3000
 2024-11-10 17:07:35 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 17:09:41 [INFO] - Incoming request
+2024-11-10 17:09:41 [INFO] - userId:8237
+2024-11-10 17:09:41 [INFO] - userId:[object Object]
+2024-11-10 17:09:41 [INFO] - userId:[object Object]
+2024-11-10 17:09:41 [INFO] - userId:[object Object]
+2024-11-10 17:09:41 [WARN] - Route not found: GET /api/v1/user/user
+2024-11-10 17:09:47 [INFO] - Incoming request
+2024-11-10 17:09:47 [INFO] - userId:8237
+2024-11-10 17:09:47 [INFO] - userId:[object Object]
+2024-11-10 17:09:47 [INFO] - userId:[object Object]
+2024-11-10 17:09:47 [INFO] - userId:[object Object]
+2024-11-10 17:09:47 [INFO] - userId:8237
+2024-11-10 17:09:47 [INFO] - userId:[object Object]
+2024-11-10 17:09:47 [INFO] - userId:[object Object]
+2024-11-10 17:09:47 [INFO] - userId:[object Object]
+2024-11-10 17:13:56 [INFO] - Swagger documentation initialized
+2024-11-10 17:13:56 [INFO] - Database initialized
+2024-11-10 17:13:56 [INFO] - Server is running on http://localhost:3000
+2024-11-10 17:13:56 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 17:14:09 [INFO] - Swagger documentation initialized
+2024-11-10 17:14:09 [INFO] - Database initialized
+2024-11-10 17:14:09 [INFO] - Server is running on http://localhost:3000
+2024-11-10 17:14:09 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:09:37 [INFO] - Incoming request
+2024-11-10 21:09:37 [INFO] - userId:8237
+2024-11-10 21:09:37 [INFO] - userId:[object Object]
+2024-11-10 21:09:37 [INFO] - userId:[object Object]
+2024-11-10 21:09:37 [INFO] - userId:[object Object]
+2024-11-10 21:09:37 [INFO] - userId:8237
+2024-11-10 21:09:37 [INFO] - userId:[object Object]
+2024-11-10 21:09:37 [INFO] - userId:[object Object]
+2024-11-10 21:09:37 [INFO] - userId:[object Object]
+2024-11-10 21:15:26 [INFO] - Swagger documentation initialized
+2024-11-10 21:15:26 [INFO] - Database initialized
+2024-11-10 21:15:26 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:15:26 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:30:55 [INFO] - Swagger documentation initialized
+2024-11-10 21:30:55 [INFO] - Database initialized
+2024-11-10 21:30:55 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:30:55 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:32:06 [INFO] - Swagger documentation initialized
+2024-11-10 21:32:06 [INFO] - Database initialized
+2024-11-10 21:32:06 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:32:06 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:32:24 [INFO] - Swagger documentation initialized
+2024-11-10 21:32:25 [INFO] - Database initialized
+2024-11-10 21:32:25 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:32:25 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:34:52 [INFO] - Swagger documentation initialized
+2024-11-10 21:34:53 [INFO] - Database initialized
+2024-11-10 21:34:53 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:34:53 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:38:53 [INFO] - Swagger documentation initialized
+2024-11-10 21:38:53 [INFO] - Database initialized
+2024-11-10 21:38:53 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:38:53 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:39:32 [INFO] - Swagger documentation initialized
+2024-11-10 21:39:32 [INFO] - Database initialized
+2024-11-10 21:39:32 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:39:32 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:40:41 [INFO] - Swagger documentation initialized
+2024-11-10 21:40:42 [INFO] - Database initialized
+2024-11-10 21:40:42 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:40:42 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:41:42 [INFO] - Swagger documentation initialized
+2024-11-10 21:41:42 [INFO] - Database initialized
+2024-11-10 21:41:42 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:41:42 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:44:04 [INFO] - Swagger documentation initialized
+2024-11-10 21:44:04 [INFO] - Database initialized
+2024-11-10 21:44:04 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:44:04 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:49:10 [INFO] - Swagger documentation initialized
+2024-11-10 21:49:10 [INFO] - Database initialized
+2024-11-10 21:49:10 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:49:10 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:49:33 [INFO] - Swagger documentation initialized
+2024-11-10 21:49:34 [INFO] - Database initialized
+2024-11-10 21:49:34 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:49:34 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:52:12 [INFO] - Swagger documentation initialized
+2024-11-10 21:52:13 [INFO] - Database initialized
+2024-11-10 21:52:13 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:52:13 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:52:49 [INFO] - Swagger documentation initialized
+2024-11-10 21:52:50 [INFO] - Database initialized
+2024-11-10 21:52:50 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:52:50 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 21:53:06 [INFO] - Incoming request
+2024-11-10 21:53:19 [INFO] - Incoming request
+2024-11-10 21:53:19 [ERROR] - Error: invalid input syntax for type uuid: "balances"
+2024-11-10 21:59:19 [INFO] - Swagger documentation initialized
+2024-11-10 21:59:19 [INFO] - Database initialized
+2024-11-10 21:59:19 [INFO] - Server is running on http://localhost:3000
+2024-11-10 21:59:19 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:02:16 [INFO] - Swagger documentation initialized
+2024-11-10 22:02:16 [INFO] - Database initialized
+2024-11-10 22:02:16 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:02:16 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:04:25 [INFO] - Swagger documentation initialized
+2024-11-10 22:04:25 [INFO] - Database initialized
+2024-11-10 22:04:25 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:04:25 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:10:46 [INFO] - Swagger documentation initialized
+2024-11-10 22:10:46 [INFO] - Database initialized
+2024-11-10 22:10:46 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:10:46 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:14:51 [INFO] - Swagger documentation initialized
+2024-11-10 22:14:51 [INFO] - Database initialized
+2024-11-10 22:14:51 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:14:51 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:15:03 [INFO] - Swagger documentation initialized
+2024-11-10 22:15:04 [INFO] - Database initialized
+2024-11-10 22:15:04 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:15:04 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:17:54 [INFO] - Swagger documentation initialized
+2024-11-10 22:17:54 [INFO] - Database initialized
+2024-11-10 22:17:54 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:17:54 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:22:41 [INFO] - Swagger documentation initialized
+2024-11-10 22:22:42 [INFO] - Database initialized
+2024-11-10 22:22:42 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:22:42 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:26:43 [INFO] - Swagger documentation initialized
+2024-11-10 22:26:43 [INFO] - Database initialized
+2024-11-10 22:26:43 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:26:43 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:27:11 [INFO] - Swagger documentation initialized
+2024-11-10 22:27:12 [INFO] - Database initialized
+2024-11-10 22:27:12 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:27:12 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:29:34 [INFO] - Swagger documentation initialized
+2024-11-10 22:29:34 [INFO] - Database initialized
+2024-11-10 22:29:34 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:29:34 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:30:10 [INFO] - Swagger documentation initialized
+2024-11-10 22:30:11 [INFO] - Database initialized
+2024-11-10 22:30:11 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:30:11 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:43:32 [INFO] - Swagger documentation initialized
+2024-11-10 22:43:32 [INFO] - Database initialized
+2024-11-10 22:43:32 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:43:32 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:44:06 [INFO] - Swagger documentation initialized
+2024-11-10 22:44:06 [INFO] - Database initialized
+2024-11-10 22:44:06 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:44:06 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:44:13 [INFO] - Incoming request
+2024-11-10 22:44:13 [ERROR] - Error: invalid input syntax for type uuid: "balances"
+2024-11-10 22:44:18 [INFO] - Incoming request
+2024-11-10 22:44:18 [ERROR] - Error: invalid input syntax for type uuid: "balance"
+2024-11-10 22:44:43 [INFO] - Incoming request
+2024-11-10 22:44:43 [WARN] - Route not found: GET /api/v1/user/balance
+2024-11-10 22:45:15 [INFO] - Incoming request
+2024-11-10 22:46:18 [INFO] - Incoming request
+2024-11-10 22:46:18 [INFO] - Creating new pointBalance
+2024-11-10 22:46:18 [ERROR] - Error: Missing required fields: pointType
+2024-11-10 22:46:58 [INFO] - Incoming request
+2024-11-10 22:46:58 [INFO] - Creating new pointBalance
+2024-11-10 22:46:58 [ERROR] - Error: null value in column "lastUpdatedAt" of relation "EPSP001M01" violates not-null constraint
+2024-11-10 22:49:14 [INFO] - Swagger documentation initialized
+2024-11-10 22:49:14 [INFO] - Database initialized
+2024-11-10 22:49:14 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:49:14 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:55:40 [INFO] - Swagger documentation initialized
+2024-11-10 22:55:40 [INFO] - Database initialized
+2024-11-10 22:55:40 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:55:40 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 22:59:16 [INFO] - Swagger documentation initialized
+2024-11-10 22:59:16 [INFO] - Database initialized
+2024-11-10 22:59:16 [INFO] - Server is running on http://localhost:3000
+2024-11-10 22:59:16 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:00:05 [INFO] - Swagger documentation initialized
+2024-11-10 23:00:06 [INFO] - Database initialized
+2024-11-10 23:00:06 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:00:06 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:01:04 [INFO] - Swagger documentation initialized
+2024-11-10 23:01:04 [INFO] - Database initialized
+2024-11-10 23:01:04 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:01:04 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:01:36 [INFO] - Incoming request
+2024-11-10 23:01:36 [INFO] - Creating new pointBalance
+2024-11-10 23:01:37 [INFO] - User created successfully: 8237
+2024-11-10 23:06:14 [INFO] - Swagger documentation initialized
+2024-11-10 23:06:14 [INFO] - Database initialized
+2024-11-10 23:06:14 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:06:14 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:08:21 [INFO] - Swagger documentation initialized
+2024-11-10 23:08:22 [INFO] - Database initialized
+2024-11-10 23:08:22 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:08:22 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:10:08 [INFO] - Swagger documentation initialized
+2024-11-10 23:10:08 [INFO] - Database initialized
+2024-11-10 23:10:08 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:10:08 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:13:49 [INFO] - Swagger documentation initialized
+2024-11-10 23:13:49 [INFO] - Database initialized
+2024-11-10 23:13:49 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:13:49 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:18:28 [INFO] - Swagger documentation initialized
+2024-11-10 23:18:28 [INFO] - Database initialized
+2024-11-10 23:18:28 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:18:28 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:23:48 [INFO] - Swagger documentation initialized
+2024-11-10 23:23:48 [INFO] - Database initialized
+2024-11-10 23:23:48 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:23:48 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:24:41 [INFO] - Swagger documentation initialized
+2024-11-10 23:24:42 [INFO] - Database initialized
+2024-11-10 23:24:42 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:24:42 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:26:03 [INFO] - Swagger documentation initialized
+2024-11-10 23:26:03 [INFO] - Database initialized
+2024-11-10 23:26:03 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:26:03 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:28:20 [INFO] - Swagger documentation initialized
+2024-11-10 23:28:20 [INFO] - Database initialized
+2024-11-10 23:28:20 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:28:20 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:31:23 [INFO] - Swagger documentation initialized
+2024-11-10 23:31:24 [INFO] - Database initialized
+2024-11-10 23:31:24 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:31:24 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-10 23:59:27 [INFO] - Swagger documentation initialized
+2024-11-10 23:59:27 [INFO] - Database initialized
+2024-11-10 23:59:27 [INFO] - Server is running on http://localhost:3000
+2024-11-10 23:59:27 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-11 00:02:21 [INFO] - Swagger documentation initialized
+2024-11-11 00:02:21 [INFO] - Database initialized
+2024-11-11 00:02:21 [INFO] - Server is running on http://localhost:3000
+2024-11-11 00:02:21 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-11 00:02:43 [INFO] - Swagger documentation initialized
+2024-11-11 00:02:43 [INFO] - Database initialized
+2024-11-11 00:02:43 [INFO] - Server is running on http://localhost:3000
+2024-11-11 00:02:43 [INFO] - API Documentation available at http://localhost:3000/api-docs
+2024-11-11 00:12:12 [INFO] - Swagger documentation initialized
+2024-11-11 00:12:13 [INFO] - Database initialized
+2024-11-11 00:12:13 [INFO] - Server is running on http://localhost:3000
+2024-11-11 00:12:13 [INFO] - API Documentation available at http://localhost:3000/api-docs

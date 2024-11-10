@@ -10,16 +10,18 @@ import { Department } from "entities/department.entity";
 interface CreateUserDto {
   userId: string;
   userName: string;
-  deptCode: string;
+  password: string;
   email: string;
+  deptCode?: string;
   authLevel?: UserType;
   isActive?: boolean;
 }
 
 interface UpdateUserDto {
   userName?: string;
-  deptCode?: string;
+  password?: string;
   email?: string;
+  deptCode?: string;
   authLevel?: UserType;
   isActive?: boolean;
 }
@@ -39,46 +41,104 @@ export class UserService {
     this.departmentService = new DepartmentService();
   }
 
+  // user 생성
   async create(data: CreateUserDto): Promise<User> {
-    // userId 입력 체크
-    if (!data.userId) {
-      throw new AppError("userId is required", 400);
+    try {
+      // userId 입력 체크
+      if (!data.userId) {
+        throw new AppError("userId is required", 400);
+      }
+
+      // email 입력 체크
+      if (!data.email) {
+        throw new AppError("email is required", 400);
+      }
+
+      // unique column 중복 확인
+      const existingUser = await this.userRepository.findOne({
+        where: [{ userId: data.userId }, { email: data.email }],
+      });
+
+      // unique 중복값이 존재할 경우
+      if (existingUser) {
+        throw new AppError(
+          "User with this userId or email already exists",
+          409
+        );
+      }
+
+      // password 입력 체크
+      if (!data.password) {
+        throw new AppError("password is required", 400);
+      }
+
+      // userName 입력 체크
+      if (!data.userName) {
+        throw new AppError("userName is required", 400);
+      }
+
+      // 부서코드 체크
+      if (data.deptCode) {
+        const department = await this.departmentRepository.findOne({
+          where: { deptCode: data.deptCode },
+        });
+
+        if (!department) {
+          throw new AppError("Department not found", 404);
+        }
+      }
+
+      // Data 입력
+      const user = this.userRepository.create({
+        ...data,
+        deptCode: data.deptCode || "TEMP",
+        authLevel: data.authLevel || UserType.USER,
+        isActive: data.isActive ?? true,
+      });
+
+      return await this.userRepository.save(user);
+    } catch (error) {
+      logger.error("Error creating user:", error);
+      throw new AppError("Failed to create user", 500);
     }
-
-    // deptCode 입력 체크
-    if (!data.deptCode) {
-      throw new AppError("deptCode is required", 400);
-    }
-
-    // 부서 존재 여부 확인
-    const department = await this.departmentRepository.findOne({
-      where: { deptCode: data.deptCode },
-    });
-
-    // 부서정보가 없을 경우
-    if (!department) {
-      throw new AppError("Department not found", 404);
-    }
-
-    // unique column 중복 확인
-    const existingUser = await this.userRepository.findOne({
-      where: [{ userId: data.userId }, { email: data.email }],
-    });
-
-    // unique 중복값이 존재할 경우
-    if (existingUser) {
-      throw new AppError("User with this userId or email already exists", 409);
-    }
-
-    // Data 입력
-    const user = this.userRepository.create({
-      ...data,
-      authLevel: data.authLevel || UserType.USER,
-      isActive: data.isActive ?? true,
-    });
-
-    return await this.userRepository.save(user);
   }
+
+  // user 목록 조회
+  async findAll(): Promise<User[]> {
+    return await this.userRepository.find();
+  }
+
+  // user 단건 조회 (id)
+  async findById(id: string): Promise<User> {
+    const user = await this.userRepository.findOne({
+      where: { id },
+    });
+
+    if (!user) {
+      throw new AppError("User not found", 404);
+    }
+    return user;
+  }
+
+  // user 단건 조회 (userId)
+  async findByUserId(userId: string): Promise<User> {
+    const user = await this.userRepository.findOne({
+      where: { userId },
+    });
+
+    if (!user) {
+      throw new AppError("User not found", 404);
+    }
+    return user;
+  }
+
+  /*
+   * ====================
+   *
+   *
+   *
+   * ====================
+   */
 
   async update(userId: string, data: UpdateUserDto): Promise<User> {
     const user = await this.findByUserId(userId);
@@ -104,36 +164,6 @@ export class UserService {
 
     Object.assign(user, data);
     return await this.userRepository.save(user);
-  }
-
-  async findAll(): Promise<User[]> {
-    return await this.userRepository.find();
-  }
-
-  // id 로 user entity 조회
-  async findById(id: string): Promise<User> {
-    const user = await this.userRepository.findOne({
-      where: { id },
-    });
-
-    if (!user) {
-      throw new AppError("User not found", 404);
-    }
-
-    return user;
-  }
-
-  // userId 로 user entity 조회
-  async findByUserId(userId: string): Promise<User> {
-    const user = await this.userRepository.findOne({
-      where: { userId },
-    });
-
-    if (!user) {
-      throw new AppError("User not found", 404);
-    }
-
-    return user;
   }
 
   // userData 로 user entity 조회

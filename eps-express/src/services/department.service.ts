@@ -2,6 +2,14 @@ import { IsNull, Repository } from "typeorm";
 import { AppDataSource } from "../configs/typeorm.config";
 import { Department } from "../entities/department.entity";
 import { AppError } from "../types/error.types";
+import { logger } from "../utils/logger";
+
+interface CreateDepartmentDto {
+  deptCode: string;
+  deptName: string;
+  parentDeptCode?: string;
+  isActive?: boolean;
+}
 
 export class DepartmentService {
   private departmentRepository: Repository<Department>;
@@ -10,40 +18,80 @@ export class DepartmentService {
     this.departmentRepository = AppDataSource.getRepository(Department);
   }
 
-  async create(data: Partial<Department>): Promise<Department> {
-    // 상위 부서 존재 여부 확인
-    if (data.parentDeptCode) {
-      const parentDept = await this.departmentRepository.findOne({
-        where: { deptCode: data.parentDeptCode },
+  // department 생성
+  async create(data: CreateDepartmentDto): Promise<Department> {
+    try {
+      // deptCode 입력 체크
+      if (!data.deptCode) {
+        throw new AppError("deptCode is required", 400);
+      }
+
+      // deptName 입력 체크
+      if (!data.deptName) {
+        throw new AppError("deptName is required", 400);
+      }
+
+      // 상위부서코드 체크
+      if (data.parentDeptCode) {
+        const parentDepartment = await this.departmentRepository.findOne({
+          where: { deptCode: data.parentDeptCode },
+        });
+
+        if (!parentDepartment) {
+          throw new AppError("parentDepartment not found", 404);
+        }
+      }
+
+      // Data 입력
+      const department = this.departmentRepository.create({
+        ...data,
+        parentDeptCode: data.parentDeptCode || "ROOT",
+        isActive: data.isActive ?? true,
       });
 
-      if (!parentDept) {
-        throw new AppError("Parent department not found", 404);
-      }
+      return await this.departmentRepository.save(department);
+    } catch (error) {
+      logger.error("Error creating department:", error);
+      throw new AppError("Failed to create department", 500);
     }
-
-    const department = this.departmentRepository.create(data);
-    return await this.departmentRepository.save(department);
   }
 
+  // department 목록 조회
   async findAll(): Promise<Department[]> {
-    return await this.departmentRepository.find({
-      relations: ["parent", "children"],
-    });
+    return await this.departmentRepository.find();
   }
 
-  async findByDeptCode(deptCode: string): Promise<Department> {
+  // department 단건 조회 (id)
+  async findById(id: string): Promise<Department> {
     const department = await this.departmentRepository.findOne({
-      where: { deptCode },
-      // relations: ["parent", "children", "users"],
+      where: { id },
     });
 
     if (!department) {
       throw new AppError("Department not found", 404);
     }
-
     return department;
   }
+
+  // department 단건 조회 (deptCode)
+  async findByDeptCode(deptCode: string): Promise<Department> {
+    const department = await this.departmentRepository.findOne({
+      where: { deptCode },
+    });
+
+    if (!department) {
+      throw new AppError("Department not found", 404);
+    }
+    return department;
+  }
+
+  /*
+   * ====================
+   *
+   *
+   *
+   * ====================
+   */
 
   async getHierarchy(): Promise<Department[]> {
     return await this.departmentRepository.find({

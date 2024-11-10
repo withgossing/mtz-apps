@@ -239,7 +239,7 @@ router.use(authMiddleware);
  *         description: User not found
  */
 
-// 사용자 생성
+// user 생성
 router.post(
   "/",
   // requireAuth(UserType.ADMIN),
@@ -249,13 +249,7 @@ router.post(
     const userData = req.body;
 
     // 필수 필드 검증
-    const requiredFields = [
-      "userId",
-      "userName",
-      "email",
-      "password",
-      "deptCode",
-    ];
+    const requiredFields = ["userId", "userName", "password", "email"];
     const missingFields = requiredFields.filter((field) => !userData[field]);
 
     if (missingFields.length > 0) {
@@ -265,7 +259,7 @@ router.post(
       );
     }
 
-    // 사용자 생성
+    // user 생성
     const user = await userService.create({
       ...userData,
       createdBy: req.user?.userId || "system",
@@ -276,8 +270,6 @@ router.post(
 
     logger.info(`User created successfully: ${user.userId}`);
 
-    // const user = userRepository.create(userBody);
-    // const result = await userRepository.save(user);
     res.status(201).json({
       status: "success",
       data: userWithoutPassword,
@@ -285,7 +277,7 @@ router.post(
   })
 );
 
-// 사용자 목록 조회
+// user 목록 조회
 router.get(
   "/",
   asyncHandler(async (req, res) => {
@@ -304,7 +296,7 @@ router.get(
   })
 );
 
-// 특정 사용자 조회 (id)
+// user 단건 조회 (id)
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -323,7 +315,7 @@ router.get(
   })
 );
 
-// 특정 사용자 조회 (userId)
+// user 단건 조회 (userId)
 router.get(
   "/userId/:userId",
   asyncHandler(async (req, res) => {

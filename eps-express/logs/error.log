@@ -26,3 +26,8 @@
 2024-11-10 12:48:08 [ERROR] - Error: Cannot read properties of undefined (reading 'findOne')
 2024-11-10 13:17:35 [ERROR] - Error: Property "parent" was not found in "Department". Make sure your query is correct.
 2024-11-10 13:20:51 [ERROR] - Error: Property "parent" was not found in "Department". Make sure your query is correct.
+2024-11-10 21:53:19 [ERROR] - Error: invalid input syntax for type uuid: "balances"
+2024-11-10 22:44:13 [ERROR] - Error: invalid input syntax for type uuid: "balances"
+2024-11-10 22:44:18 [ERROR] - Error: invalid input syntax for type uuid: "balance"
+2024-11-10 22:46:18 [ERROR] - Error: Missing required fields: pointType
+2024-11-10 22:46:58 [ERROR] - Error: null value in column "lastUpdatedAt" of relation "EPSP001M01" violates not-null constraint

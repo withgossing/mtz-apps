@@ -5,7 +5,7 @@ import { logger } from "../utils/logger";
 
 import { userRouter } from "./user.routes";
 import { departmentRouter } from "./department.routes";
-import { pointRouter } from "./point.routes";
+import { pointBalancesRouter } from "./pointBalances.routes";
 
 const router = Router();
 
@@ -31,8 +31,8 @@ const adminRoutes = [
 // 사용자 전용 라우트
 const userRoutes = [
   {
-    path: "/points",
-    router: pointRouter,
+    path: "/point/balance",
+    router: pointBalancesRouter,
   },
 ];
 
