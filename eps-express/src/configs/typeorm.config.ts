@@ -9,7 +9,7 @@ const options: DataSourceOptions = {
   password: config.database.password || "password",
   database: config.database.database || "testdb",
   synchronize: config.server.nodeEnv !== "production",
-  logging: config.server.nodeEnv !== "production",
+  // logging: config.server.nodeEnv !== "production",
   entities: [__dirname + "/../**/*.entity.{js,ts}"],
   migrations: ["src/migrations/**/*.ts"],
   subscribers: ["src/subscribers/**/*.ts"],

@@ -1,13 +1,36 @@
-// import { DocumentBuilder } from "@nestjs/swagger";
+import { SwaggerDefinition } from "swagger-jsdoc";
+import { config } from "./env.config";
 
-// export class BaseAPIDocument {
-//   public builder = new DocumentBuilder();
-
-//   public initializeOptions() {
-//     return this.builder
-//       .setTitle("API document")
-//       .setDescription("API document.")
-//       .setVersion("1.0.0")
-//       .build();
-//   }
-// }
+export const swaggerConfig = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Express API Documentation",
+      version: "1.0.0",
+      description: "API documentation for Express TypeORM Project",
+    },
+    servers: [
+      {
+        url: process.env.API_URL || "http://localhost:" + config.server.port,
+        description: "Development server",
+      },
+    ],
+    components: {
+      securitySchemes: {
+        userId: {
+          type: "apiKey",
+          in: "header",
+          name: "user-id",
+          description: "User ID for authentication",
+        },
+      },
+    },
+    security: [
+      {
+        userId: [],
+      },
+    ],
+  },
+  apis: ["./src/routes/*.ts", "./src/entities/*.ts"],
+  explorer: true,
+};

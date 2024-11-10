@@ -1,0 +1,28 @@
+{"level":"error","message":"Error during initialization:","timestamp":"2024-11-09T10:00:34.397Z"}
+2024-11-09 23:19:44 [ERROR] - Error during initialization:
+2024-11-10 00:56:06 [ERROR] - Error during initialization:
+2024-11-10 10:23:16 [ERROR] - Error: invalid input syntax for type uuid: "8237"
+2024-11-10 10:25:56 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:26:13 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:26:23 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:26:34 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:27:09 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:28:58 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:30:35 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:30:47 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:38:37 [ERROR] - Error: duplicate key value violates unique constraint "UQ_5c25de24d7c3154e6a758b38f07"
+2024-11-10 10:56:39 [ERROR] - Error: Authentication required
+2024-11-10 10:59:18 [ERROR] - Authentication failed for userId: 8237
+2024-11-10 10:59:18 [ERROR] - Error: Authentication failed
+2024-11-10 11:00:46 [ERROR] - Authentication failed for userId: 8237
+2024-11-10 11:00:46 [ERROR] - Error: Authentication failed
+2024-11-10 11:02:24 [ERROR] - Authentication failed for userId: 8237
+2024-11-10 11:02:24 [ERROR] - Error: Authentication failed
+2024-11-10 11:03:29 [ERROR] - Authentication failed for userId: 8237
+2024-11-10 11:03:29 [ERROR] - Error: Authentication failed
+2024-11-10 12:27:14 [ERROR] - Authentication failed for userId: 8237
+2024-11-10 12:27:14 [ERROR] - Error: Authentication failed
+2024-11-10 12:32:51 [ERROR] - Error: Property "department" was not found in "User". Make sure your query is correct.
+2024-11-10 12:48:08 [ERROR] - Error: Cannot read properties of undefined (reading 'findOne')
+2024-11-10 13:17:35 [ERROR] - Error: Property "parent" was not found in "Department". Make sure your query is correct.
+2024-11-10 13:20:51 [ERROR] - Error: Property "parent" was not found in "Department". Make sure your query is correct.
